@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="da"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#501b30">
+<title>Vinlogen · Stillingen</title>
+<style>
+:root{--paper:#f6f3ec;--white:#fffdf9;--ink:#302a28;--muted:#766f67;--wine:#501b30;--rose:#ede0e2;--line:#e5dfd4;--gold:#bc9d68;--green:#536851;--radius:18px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a77b43;outline-offset:4px}button{color:inherit}a{color:inherit}svg{vertical-align:middle}button svg{width:17px;height:17px;flex-shrink:0}[hidden]{display:none!important}
+.wrap{max-width:1180px;margin:auto;padding:0 32px}.topbar{border-bottom:1px solid var(--line)}.topbar .wrap{min-height:92px;display:flex;align-items:center;gap:32px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand-mark{width:43px;height:43px;border:1px solid var(--wine);border-radius:50%;display:grid;place-items:center;color:var(--wine)}.brand-name{font:29px Georgia,serif;letter-spacing:-1px}.brand small{display:block;font:9px sans-serif;letter-spacing:2.6px;margin-top:4px}.nav{display:flex;gap:25px;margin-left:24px}.nav a{font-size:13px;text-decoration:none;color:var(--muted)}.nav a:hover{color:var(--wine)}.top-actions{margin-left:auto;display:flex;gap:10px}
+.btn{border:1px solid var(--line);border-radius:9px;background:var(--white);padding:11px 15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:600;min-height:44px;text-decoration:none;transition:background .15s,transform .15s}.btn:hover{background:#ede7de}.btn:active{transform:translateY(1px)}.primary{background:var(--wine);border-color:var(--wine);color:white}.primary:hover{background:#68243e}.quiet{background:transparent;border-color:transparent}.danger{color:#9c3333}.icon-btn{padding:9px;min-width:40px;min-height:40px}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:45px;align-items:center;padding:48px 0 35px}.hero h1{font:clamp(38px,4.3vw,58px)/1.05 Georgia,serif;letter-spacing:-2px;margin:15px 0 17px}.hero h1 em{color:var(--wine);font-weight:400}.hero p{font-size:14px;line-height:1.7;color:var(--muted);margin:0;max-width:400px}
+.leader-card{position:relative;overflow:hidden;background:var(--wine);color:#fff7eb;border-radius:var(--radius);min-height:223px;padding:28px 30px;display:flex;align-items:center;justify-content:space-between}.leader-card:after{content:"";position:absolute;width:250px;height:250px;right:-90px;top:-110px;border:1px solid #ffffff13;border-radius:50%;box-shadow:0 0 0 26px #ffffff06,0 0 0 55px #ffffff04;pointer-events:none}.leader-copy{position:relative;z-index:1;max-width:76%}.leader-label{display:flex;align-items:center;gap:9px;color:#ddc3bd;font-size:10px;letter-spacing:2px;text-transform:uppercase}.leader-label svg{width:17px;height:17px;color:#cfb280}.leader-name{font:42px/1.1 Georgia,serif;margin:15px 0 10px;overflow-wrap:anywhere}.leader-name.tied{font-size:27px}.leader-detail{color:#ddc3bd;font-size:12px;line-height:1.6}.leader-number{position:relative;z-index:1;text-align:center;padding-left:12px;align-self:center}.leader-number strong{display:block;font:72px/1 Georgia,serif;font-weight:400;letter-spacing:-3px}.leader-number small{font-size:10px;letter-spacing:2px;color:#ddc3bd}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--white);border-radius:12px;margin-bottom:28px}.stat{display:flex;align-items:center;gap:17px;padding:21px 24px}.stat+.stat{border-left:1px solid var(--line)}.stat-value{font:31px Georgia,serif;color:var(--wine)}.stat-label{font-size:11px;color:var(--muted);line-height:1.6}.stat-label b{font-size:12px;color:var(--ink);font-weight:500;display:block}
+.section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:0 0 20px}.section-heading h2{font:27px Georgia,serif;letter-spacing:-.5px;margin:0}.section-heading p{font-size:12px;color:var(--muted);margin:7px 0 0}.section-heading .tag{border:1px solid var(--line);padding:7px 11px;border-radius:30px;font-size:10px;color:var(--muted);white-space:nowrap}
+.main-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:start}.panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:25px}.panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:10px}.panel-header h2,.panel-header h3{font:24px Georgia,serif;margin:0;letter-spacing:-.4px}.panel-header small{font-size:11px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th{text-align:left;color:var(--muted);font-size:9px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;padding:0 0 12px}th.num,td.num{text-align:right}td{padding:17px 0;border-top:1px solid var(--line);font-size:13px}td.rank{width:29px;color:var(--muted);font-size:13px}.person{display:flex;align-items:center;gap:11px;min-width:0}.avatar{width:34px;height:34px;display:grid;place-items:center;flex-shrink:0;border-radius:50%;color:white;font-size:11px;font-weight:600}.person-name{font-weight:600;overflow-wrap:anywhere;max-width:155px}.person-note{font-size:10px;color:var(--muted);margin-top:5px;font-weight:400}.score{font-size:25px;letter-spacing:-1px;font-weight:500;color:var(--wine)}.faded{color:var(--muted)}.top-row .person-name{color:var(--wine)}.top-row .person-note{color:var(--green)}.table-foot{border-top:1px solid var(--line);padding-top:16px;display:flex;align-items:center;gap:7px;font-size:10px;color:var(--muted)}.small-dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;flex-shrink:0}
+.right-stack{display:grid;gap:20px}.chart-subtitle{font-size:11px;color:var(--muted);margin:-12px 0 3px;line-height:1.6}.chart{width:100%;display:block;overflow:visible}.legend{display:flex;gap:5px 13px;flex-wrap:wrap;margin-top:9px}.legend button{border:0;background:transparent;display:flex;align-items:center;gap:6px;padding:6px 0;font-size:10px;color:var(--muted);min-height:28px}.legend button.active{font-weight:700;color:var(--ink)}.legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}.rules{display:flex;align-items:center;gap:18px;background:#eee8dc;padding:20px 23px;border:1px solid #e4dac9;border-radius:var(--radius)}.rules-mark{font:35px Georgia,serif;color:var(--wine);white-space:nowrap;letter-spacing:-2px}.rules h3{font-size:12px;margin:0 0 6px;font-weight:600}.rules p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}
+.history{scroll-margin-top:20px;margin-top:32px}.history-list{display:grid;gap:13px}.event-card{border:1px solid var(--line);border-radius:14px;background:var(--white);padding:21px 24px}.event-header{display:flex;gap:14px;align-items:center}.event-no{color:#9d8877;font:24px Georgia,serif;min-width:31px}.event-title{flex:1;min-width:0}.event-title h3{font-size:14px;font-weight:600;margin:0;overflow-wrap:anywhere}.event-title p{font-size:10px;color:var(--muted);margin:6px 0 0}.event-actions{display:flex;gap:3px}.event-results{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:16px 0 0;margin:16px 0 0;border-top:1px solid var(--line)}.event-results li{display:flex;align-items:center;gap:8px;min-width:0;font-size:12px}.place-chip{width:25px;height:25px;border-radius:6px;background:var(--paper);display:grid;place-items:center;color:var(--muted);font-size:11px;flex-shrink:0}.event-results li:first-child .place-chip{background:var(--wine);color:white}.result-name{overflow-wrap:anywhere}.result-name small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.data-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;border-top:1px solid var(--line);margin-top:30px}.data-copy{font-size:11px;line-height:1.7;color:var(--muted);max-width:510px}.data-copy strong{color:var(--ink);font-weight:500;display:flex;align-items:center;gap:6px;margin-bottom:4px}.data-actions{display:flex;gap:8px;flex-shrink:0}.footer{display:flex;justify-content:space-between;padding:15px 0 28px;font-size:9px;color:#958c82;letter-spacing:1.5px;text-transform:uppercase}.empty{padding:35px 10px;text-align:center;color:var(--muted);font-size:13px;line-height:1.8}.empty strong{display:block;color:var(--ink);font:24px Georgia,serif;margin-bottom:9px}
+dialog{border:1px solid var(--line);padding:0;border-radius:18px;width:min(520px,calc(100% - 28px));max-height:calc(100dvh - 36px);background:var(--white);color:var(--ink);box-shadow:0 25px 100px #28101c44}dialog::backdrop{background:#2118218a;backdrop-filter:blur(3px)}.modal-body{padding:25px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:10px}.modal-head h2{font:29px Georgia,serif;margin:0}.modal-intro{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 23px}label.field{display:block;font-size:11px;font-weight:600;margin:17px 0}.field input{display:block;margin-top:8px;width:100%}input,select{border:1px solid #d9d1c5;border-radius:8px;background:white;color:var(--ink);padding:12px;font-size:14px;min-height:45px;max-width:100%}input:focus,select:focus{border-color:var(--wine)}.field small{display:block;font-size:10px;color:var(--muted);font-weight:400;margin-top:7px;line-height:1.5}.form-caption{font-size:10px;letter-spacing:1.3px;color:var(--muted);text-transform:uppercase;margin:23px 0 12px}.place-row{display:flex;align-items:center;gap:15px;margin:9px 0}.place-row label{width:86px;font-size:12px;line-height:1.7;flex-shrink:0}.place-row label small{display:block;font-size:10px;color:var(--muted)}.place-row select{flex:1;min-width:0}.error{background:#f7e8e6;color:#8a2e28;font-size:12px;padding:12px 14px;border-radius:8px;line-height:1.6;margin:14px 0 0}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:23px;padding-top:18px;border-top:1px solid var(--line)}.toast{position:fixed;bottom:23px;left:50%;transform:translateX(-50%);padding:13px 20px;background:#2e3029;color:white;font-size:12px;line-height:1.6;border-radius:10px;max-width:calc(100% - 32px);width:max-content;z-index:20;box-shadow:0 5px 20px #0002}#stilling{scroll-margin-top:24px}
+@media(min-width:1300px){.wrap{max-width:1200px}.hero{gap:85px}}
+@media(max-width:900px){.nav{display:none}.hero{gap:25px}.leader-name{font-size:35px}.leader-number strong{font-size:60px}.main-grid{grid-template-columns:1fr 1fr;gap:16px}.panel{padding:20px}.person-name{max-width:100px}.avatar{width:29px;height:29px}.stat{padding:18px}.event-results{gap:6px}.data-bar{align-items:flex-start;flex-direction:column}}
+@media(max-width:680px){.wrap{padding:0 18px}.topbar .wrap{min-height:79px;gap:10px}.brand{gap:9px}.brand-name{font-size:24px}.brand-mark{width:36px;height:36px}.brand small{font-size:8px;letter-spacing:1.8px}.top-actions{gap:3px}.top-actions .btn{font-size:11px;padding:9px 10px}.top-actions .members-label{display:none}.hero{grid-template-columns:1fr;gap:23px;padding:32px 0 22px}.hero h1{font-size:43px;margin:12px 0}.hero p{font-size:13px}.leader-card{min-height:180px;padding:23px 25px}.leader-name{font-size:37px}.leader-number strong{font-size:67px}.stats{margin-bottom:25px}.stat{padding:15px 8px;gap:5px;flex-direction:column;align-items:center;text-align:center}.stat-value{font-size:27px}.stat-label{font-size:9px}.stat-label b{font-size:10px}.main-grid{grid-template-columns:1fr}.panel{padding:22px}.panel-header{margin-bottom:22px}.person-name{max-width:175px}.avatar{width:34px;height:34px}.section-heading h2{font-size:26px}.section-heading .tag{display:none}.section-heading .btn{padding:11px 12px;font-size:12px}.event-card{padding:18px}.event-no{min-width:23px;font-size:21px}.event-header{gap:9px}.event-title h3{font-size:13px}.event-results{grid-template-columns:1fr;gap:10px;padding-top:14px;margin-top:14px}.event-results li{gap:10px}.result-name{display:flex;justify-content:space-between;gap:12px;flex:1;align-items:center}.result-name small{margin:0;font-size:10px}.event-actions .icon-btn{min-width:35px;padding:7px}.data-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.data-actions .btn{font-size:12px}.footer{font-size:8px;letter-spacing:1px}.modal-body{padding:21px}.modal-head h2{font-size:26px}.leader-copy{max-width:78%}.leader-name.tied{font-size:24px}.person{gap:9px}td{padding:15px 0}th{font-size:8px}.score{font-size:24px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{.top-actions,.nav,.event-actions,.data-bar,.new-event-button,.legend,.toast{display:none!important}body{background:white}.wrap{max-width:none;padding:0}.hero{padding-top:20px}.panel,.event-card,.stats{break-inside:avoid}.main-grid{grid-template-columns:1.15fr 1fr}dialog{display:none}.leader-card{print-color-adjust:exact;-webkit-print-color-adjust:exact}.history{margin-top:20px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="wrap">
+<a class="brand" href="#" aria-label="Vinlogen, forside">
+<span class="brand-mark">
+<svg width="25" height="29" viewBox="0 0 30 34" fill="none" aria-hidden="true"><path d="M9 3h12l2 11c0 5-3.5 8-8 8s-8-3-8-8L9 3Zm6 19v9m-6 0h12M8 12h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M9 14c0 4 2 6 6 6s6-2 6-6H9Z" fill="currentColor" opacity=".18"></path></svg>
+</span>
+<span class="brand-name">Vinlogen<small>DEN INTERNE KONKURRENCE</small></span>
+</a>
+<nav class="nav" aria-label="Navigation"><a href="#stilling">Stillingen</a><a href="#historik">Konkurrencer</a></nav>
+<div class="top-actions">
+<button class="btn quiet" id="members-button" aria-label="Rediger medlemmer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v2"></path></svg><span class="members-label">Medlemmer</span></button>
+<button class="btn" id="download-html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"></path></svg>Hent HTML</button>
+</div>
+</div>
+</header>
+<main class="wrap">
+<section class="hero" aria-label="Overblik">
+<div><div class="eyebrow">Fem venner. Én stilling.</div><h1>Kampen om<br><em>førstepladsen.</em></h1><p>Vin i glasset og point på tavlen.<br>Følg logens konkurrencer, én aften ad gangen.</p></div>
+<div class="leader-card" id="leader-card"><div class="leader-copy"><div class="leader-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8v5a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 5 4m7-7h4v3a4 4 0 0 1-5 4m-3 0v7m-4 2h8"></path></svg>Delt førsteplads</div><div class="leader-name tied">Guffe · Lind · Pearl</div><div class="leader-detail">2 konkurrencer er afgjort.</div></div><div class="leader-number"><strong>5</strong><small>POINT</small></div></div>
+</section>
+<div class="stats" aria-label="Nøgletal">
+<div class="stat"><span class="stat-value" id="round-count">2</span><span class="stat-label"><b>Konkurrencer</b>afholdt i logen</span></div>
+<div class="stat"><span class="stat-value">5</span><span class="stat-label"><b>Medlemmer</b>med i kampen</span></div>
+<div class="stat"><span class="stat-value" id="points-count">30</span><span class="stat-label"><b>Point fordelt</b>lavest er bedst</span></div>
+</div>
+<div class="section-heading" id="stilling">
+<div><h2>Samlet stilling</h2><p>Alle konkurrencer tæller lige meget.</p></div>
+<button class="btn primary new-event-button" id="new-event"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Ny konkurrence</button>
+</div>
+<div class="main-grid">
+<section class="panel" aria-label="Rangliste">
+<div class="panel-header"><h2>Logens rangliste</h2><small id="ranking-meta">Efter 2 konkurrencer</small></div>
+<table id="leaderboard">
+<thead><tr><th scope="col">Nr.</th><th scope="col">Medlem</th><th scope="col" class="num">Sejre</th><th scope="col" class="num">Snit</th><th scope="col" class="num">Point</th></tr></thead>
+<tbody><tr data-member="guffe" class="top-row"><td class="rank">1</td><td><div class="person"><span class="avatar" style="background:#587a90">GU</span><div><div class="person-name">Guffe</div><div class="person-note">Delt føring</div></div></div></td><td class="num faded">0</td><td class="num faded">2,5</td><td class="num score">5</td></tr><tr data-member="lind" class="top-row"><td class="rank">1</td><td><div class="person"><span class="avatar" style="background:#596d53">LI</span><div><div class="person-name">Lind</div><div class="person-note">Delt føring</div></div></div></td><td class="num faded">1</td><td class="num faded">2,5</td><td class="num score">5</td></tr><tr data-member="pearl" class="top-row"><td class="rank">1</td><td><div class="person"><span class="avatar" style="background:#b26c7c">PE</span><div><div class="person-name">Pearl</div><div class="person-note">Delt føring</div></div></div></td><td class="num faded">0</td><td class="num faded">2,5</td><td class="num score">5</td></tr><tr data-member="dreier" class=""><td class="rank">4</td><td><div class="person"><span class="avatar" style="background:#501b30">DR</span><div><div class="person-name">Dreier</div><div class="person-note">+1 point fra føringen</div></div></div></td><td class="num faded">1</td><td class="num faded">3,0</td><td class="num score">6</td></tr><tr data-member="kusse" class=""><td class="rank">5</td><td><div class="person"><span class="avatar" style="background:#a7854b">KU</span><div><div class="person-name">Kusse</div><div class="person-note">+4 point fra føringen</div></div></div></td><td class="num faded">0</td><td class="num faded">4,5</td><td class="num score">9</td></tr></tbody>
+</table>
+<div class="table-foot"><span class="small-dot"></span>Samme pointtal giver delt placering.</div>
+</section>
+<div class="right-stack">
+<section class="panel">
+<div class="panel-header"><h2>Placering over tid</h2></div>
+<p class="chart-subtitle" id="chart-caption">Samlet placering efter hver konkurrence. 1. plads øverst.</p>
+<div id="chart-container"><svg class="chart" viewBox="0 0 520 203" role="img" aria-label="Samlet placering efter hver konkurrence. Førsteplads øverst."><line x1="25" y1="15" x2="500" y2="15" stroke="#e8e1d8" stroke-dasharray="3 5"></line><text x="6" y="18" fill="#92877a" font-size="10">1</text><line x1="25" y1="53" x2="500" y2="53" stroke="#e8e1d8" stroke-dasharray="3 5"></line><text x="6" y="56" fill="#92877a" font-size="10">2</text><line x1="25" y1="91" x2="500" y2="91" stroke="#e8e1d8" stroke-dasharray="3 5"></line><text x="6" y="94" fill="#92877a" font-size="10">3</text><line x1="25" y1="129" x2="500" y2="129" stroke="#e8e1d8" stroke-dasharray="3 5"></line><text x="6" y="132" fill="#92877a" font-size="10">4</text><line x1="25" y1="167" x2="500" y2="167" stroke="#e8e1d8" stroke-dasharray="3 5"></line><text x="6" y="170" fill="#92877a" font-size="10">5</text><text x="25" y="190" fill="#92877a" font-size="10" text-anchor="middle">1</text><text x="500" y="190" fill="#92877a" font-size="10" text-anchor="middle">2</text><g opacity="1"><path d="M25,129 L500,15" fill="none" stroke="#596d53" stroke-width="2.4" stroke-linejoin="round"></path><circle cx="25" cy="129" r="5" fill="#596d53" stroke="#fffdf9" stroke-width="2"><title>Lind: 4. plads, 4 point efter konkurrence 1</title></circle><circle cx="500" cy="15" r="5" fill="#596d53" stroke="#fffdf9" stroke-width="2"><title>Lind: 1. plads, 5 point efter konkurrence 2</title></circle></g><g opacity="1"><path d="M25,167 L500,167" fill="none" stroke="#a7854b" stroke-width="2.4" stroke-linejoin="round"></path><circle cx="25" cy="167" r="5" fill="#a7854b" stroke="#fffdf9" stroke-width="2"><title>Kusse: 5. plads, 5 point efter konkurrence 1</title></circle><circle cx="500" cy="167" r="5" fill="#a7854b" stroke="#fffdf9" stroke-width="2"><title>Kusse: 5. plads, 9 point efter konkurrence 2</title></circle></g><g opacity="1"><path d="M25,53 L500,15" fill="none" stroke="#587a90" stroke-width="2.4" stroke-linejoin="round"></path><circle cx="25" cy="53" r="5" fill="#587a90" stroke="#fffdf9" stroke-width="2"><title>Guffe: 2. plads, 2 point efter konkurrence 1</title></circle><circle cx="500" cy="15" r="5" fill="#587a90" stroke="#fffdf9" stroke-width="2"><title>Guffe: 1. plads, 5 point efter konkurrence 2</title></circle></g><g opacity="1"><path d="M25,91 L500,15" fill="none" stroke="#b26c7c" stroke-width="2.4" stroke-linejoin="round"></path><circle cx="25" cy="91" r="5" fill="#b26c7c" stroke="#fffdf9" stroke-width="2"><title>Pearl: 3. plads, 3 point efter konkurrence 1</title></circle><circle cx="500" cy="15" r="5" fill="#b26c7c" stroke="#fffdf9" stroke-width="2"><title>Pearl: 1. plads, 5 point efter konkurrence 2</title></circle></g><g opacity="1"><path d="M25,15 L500,129" fill="none" stroke="#501b30" stroke-width="2.4" stroke-linejoin="round"></path><circle cx="25" cy="15" r="5" fill="#501b30" stroke="#fffdf9" stroke-width="2"><title>Dreier: 1. plads, 1 point efter konkurrence 1</title></circle><circle cx="500" cy="129" r="5" fill="#501b30" stroke="#fffdf9" stroke-width="2"><title>Dreier: 4. plads, 6 point efter konkurrence 2</title></circle></g></svg></div>
+<div class="legend" id="chart-legend" aria-label="Fremhæv et medlem i grafen"><button data-series="lind" class="" aria-pressed="false" title="Fremhæv Lind"><span class="legend-dot" style="background:#596d53"></span>Lind</button><button data-series="kusse" class="" aria-pressed="false" title="Fremhæv Kusse"><span class="legend-dot" style="background:#a7854b"></span>Kusse</button><button data-series="guffe" class="" aria-pressed="false" title="Fremhæv Guffe"><span class="legend-dot" style="background:#587a90"></span>Guffe</button><button data-series="pearl" class="" aria-pressed="false" title="Fremhæv Pearl"><span class="legend-dot" style="background:#b26c7c"></span>Pearl</button><button data-series="dreier" class="" aria-pressed="false" title="Fremhæv Dreier"><span class="legend-dot" style="background:#501b30"></span>Dreier</button></div>
+</section>
+<aside class="rules"><div class="rules-mark" aria-hidden="true">1–5</div><div><h3>Laveste pointtal vinder</h3><p>1. plads = 1 point. 2. plads = 2 point.<br>Og sådan fortsætter det til 5. plads = 5 point.</p></div></aside>
+</div>
+</div>
+<section class="history" id="historik">
+<div class="section-heading"><div><h2>Konkurrencer</h2><p>Resultater fra logens aftener. Nyeste først.</p></div><span class="tag" id="history-tag">2 konkurrencer</span></div>
+<div class="history-list" id="history-list"><article class="event-card"><div class="event-header"><div class="event-no">02</div><div class="event-title"><h3>Orbito</h3><p>6. november 2026</p></div><div class="event-actions"><button class="btn quiet icon-btn" data-edit="r-mwdhphp9-5n3yy" aria-label="Rediger Orbito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-5-5L4 14v6Z"></path></svg></button><button class="btn quiet icon-btn danger" data-delete="r-mwdhphp9-5n3yy" aria-label="Slet Orbito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"></path></svg></button></div></div><ol class="event-results"><li><span class="place-chip">1</span><span class="result-name">Lind<small>1 point</small></span></li><li><span class="place-chip">2</span><span class="result-name">Pearl<small>2 point</small></span></li><li><span class="place-chip">3</span><span class="result-name">Guffe<small>3 point</small></span></li><li><span class="place-chip">4</span><span class="result-name">Kusse<small>4 point</small></span></li><li><span class="place-chip">5</span><span class="result-name">Dreier<small>5 point</small></span></li></ol></article><article class="event-card"><div class="event-header"><div class="event-no">01</div><div class="event-title"><h3>Stafetbane med legetøjsbil</h3><p>Dato ikke angivet</p></div><div class="event-actions"><button class="btn quiet icon-btn" data-edit="round-1" aria-label="Rediger Stafetbane med legetøjsbil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-5-5L4 14v6Z"></path></svg></button><button class="btn quiet icon-btn danger" data-delete="round-1" aria-label="Slet Stafetbane med legetøjsbil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"></path></svg></button></div></div><ol class="event-results"><li><span class="place-chip">1</span><span class="result-name">Dreier<small>1 point</small></span></li><li><span class="place-chip">2</span><span class="result-name">Guffe<small>2 point</small></span></li><li><span class="place-chip">3</span><span class="result-name">Pearl<small>3 point</small></span></li><li><span class="place-chip">4</span><span class="result-name">Lind<small>4 point</small></span></li><li><span class="place-chip">5</span><span class="result-name">Kusse<small>5 point</small></span></li></ol></article></div>
+</section>
+<section class="data-bar" aria-label="Gem og del">
+<div class="data-copy">
+<strong id="storage-status"><span class="small-dot"></span>Gemmes i denne browser</strong>
+<span id="storage-detail">Ingen automatisk synkronisering mellem jer. Hent en HTML-kopi med den aktuelle stilling, eller flyt resultaterne med eksport og import.</span>
+</div>
+<div class="data-actions"><button class="btn" id="export-json">Eksportér data</button><button class="btn" id="import-trigger">Importér data</button><input id="import-file" type="file" accept=".json,application/json" hidden="" aria-label="Vælg datafil"></div>
+</section>
+<footer class="footer"><span>Vinlogen · Det er pointene, der tæller</span><span>Lavest er bedst</span></footer>
+</main>
+
+<dialog id="event-dialog" aria-labelledby="event-dialog-title">
+<div class="modal-body">
+<div class="modal-head"><h2 id="event-dialog-title">Ny konkurrence</h2><button class="btn quiet icon-btn" data-close="event-dialog" aria-label="Luk">×</button></div>
+<p class="modal-intro">Fordel de fem pladser. Hvert medlem skal optræde én gang.</p>
+<form id="event-form" novalidate="">
+<label class="field" for="event-name">Konkurrencens navn<input id="event-name" maxlength="90" required="" placeholder="Fx blindsmagning" autocomplete="off"></label>
+<label class="field" for="event-date">Dato <span class="faded">(valgfri)</span><input id="event-date" type="date"><small>Rækkefølgen følger oprettelsen. Datoen er kun en oplysning.</small></label>
+<div class="form-caption">Placering og point</div>
+<div id="place-fields"><div class="place-row"><label for="place-1">1. plads<small>1 point</small></label><select name="place-1" id="place-1" required=""><option value="">Vælg medlem</option><option value="lind">Lind</option><option value="kusse">Kusse</option><option value="guffe">Guffe</option><option value="pearl">Pearl</option><option value="dreier">Dreier</option></select></div><div class="place-row"><label for="place-2">2. plads<small>2 point</small></label><select name="place-2" id="place-2" required=""><option value="">Vælg medlem</option><option value="lind">Lind</option><option value="kusse">Kusse</option><option value="guffe">Guffe</option><option value="pearl">Pearl</option><option value="dreier">Dreier</option></select></div><div class="place-row"><label for="place-3">3. plads<small>3 point</small></label><select name="place-3" id="place-3" required=""><option value="">Vælg medlem</option><option value="lind">Lind</option><option value="kusse">Kusse</option><option value="guffe">Guffe</option><option value="pearl">Pearl</option><option value="dreier">Dreier</option></select></div><div class="place-row"><label for="place-4">4. plads<small>4 point</small></label><select name="place-4" id="place-4" required=""><option value="">Vælg medlem</option><option value="lind">Lind</option><option value="kusse">Kusse</option><option value="guffe">Guffe</option><option value="pearl">Pearl</option><option value="dreier">Dreier</option></select></div><div class="place-row"><label for="place-5">5. plads<small>5 point</small></label><select name="place-5" id="place-5" required=""><option value="">Vælg medlem</option><option value="lind">Lind</option><option value="kusse">Kusse</option><option value="guffe">Guffe</option><option value="pearl">Pearl</option><option value="dreier">Dreier</option></select></div></div>
+<div id="event-error" class="error" role="alert" hidden=""></div>
+<div class="form-actions"><button class="btn" type="button" data-close="event-dialog">Annuller</button><button class="btn primary" type="submit">Gem konkurrence</button></div>
+</form>
+</div>
+</dialog>
+
+<dialog id="members-dialog" aria-labelledby="members-title">
+<div class="modal-body">
+<div class="modal-head"><h2 id="members-title">Logens medlemmer</h2><button class="btn quiet icon-btn" data-close="members-dialog" aria-label="Luk">×</button></div>
+<p class="modal-intro">Ret et navn her. Point og historik følger automatisk med.</p>
+<form id="members-form" novalidate="">
+<div id="member-fields"></div>
+<div id="members-error" class="error" role="alert" hidden=""></div>
+<div class="form-actions"><button class="btn" type="button" data-close="members-dialog">Annuller</button><button class="btn primary" type="submit">Gem navne</button></div>
+</form>
+</div>
+</dialog>
+
+<dialog id="confirm-dialog" aria-labelledby="confirm-title">
+<div class="modal-body">
+<div class="modal-head"><h2 id="confirm-title"></h2><button class="btn quiet icon-btn" data-close="confirm-dialog" aria-label="Luk">×</button></div>
+<p class="modal-intro" id="confirm-text"></p>
+<div class="form-actions"><button class="btn" data-close="confirm-dialog">Annuller</button><button class="btn primary" id="confirm-accept">Bekræft</button></div>
+</div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden=""></div>
+<noscript><p class="wrap">Aktivér JavaScript i browseren for at se og opdatere stillingen.</p></noscript>
+<script type="application/json" id="seed">{"version":1,"savedAt":1794484455781,"members":[{"id":"lind","name":"Lind"},{"id":"kusse","name":"Kusse"},{"id":"guffe","name":"Guffe"},{"id":"pearl","name":"Pearl"},{"id":"dreier","name":"Dreier"}],"events":[{"id":"round-1","name":"Stafetbane med legetøjsbil","date":"","scores":{"lind":4,"kusse":5,"guffe":2,"pearl":3,"dreier":1}},{"id":"r-mwdhphp9-5n3yy","name":"Orbito","date":"2026-11-06","scores":{"lind":1,"kusse":4,"guffe":3,"pearl":2,"dreier":5}}]}</script>
+<script>
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s);
+const IDS=['lind','kusse','guffe','pearl','dreier'];
+const COLORS={lind:'#596d53',kusse:'#a7854b',guffe:'#587a90',pearl:'#b26c7c',dreier:'#501b30'};
+const KEY='vinlogen-v1-lind-kusse-guffe-pearl-dreier';
+const clone=o=>JSON.parse(JSON.stringify(o));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icons={
+trophy:'<path d="M8 3h8v5a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 5 4m7-7h4v3a4 4 0 0 1-5 4m-3 0v7m-4 2h8"/>',
+edit:'<path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-5-5L4 14v6Z"/>',
+trash:'<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/>'
+};
+const icon=k=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[k]+'</svg>';
+const validDate=s=>s===''||(/^\d{4}-\d{2}-\d{2}$/.test(s)&&Number(s.slice(0,4))>=1900&&Number(s.slice(0,4))<=9999&&Number.isFinite(Date.parse(s+'T12:00:00Z'))&&new Date(s+'T12:00:00Z').toISOString().slice(0,10)===s);
+
+function validate(d){
+ if(!d||d.version!==1||!Array.isArray(d.members)||d.members.length!==5||!Array.isArray(d.events)||d.events.length>1000)
+  throw Error('Filen er ikke en gyldig Vinlogen-datafil.');
+ const members=IDS.map(id=>{
+  const hits=d.members.filter(m=>m&&m.id===id);
+  if(hits.length!==1||typeof hits[0].name!=='string'||!hits[0].name.trim()||hits[0].name.trim().length>24)
+   throw Error('Filen skal indeholde de fem medlemmer med gyldige navne.');
+  return {id,name:hits[0].name.trim()};
+ });
+ if(new Set(members.map(m=>m.name.toLocaleLowerCase('da'))).size!==5)
+  throw Error('Medlemmerne skal have forskellige navne.');
+ const seen=new Set();
+ const events=d.events.map(e=>{
+  if(!e||typeof e.id!=='string'||!/^[a-zA-Z0-9_-]{1,80}$/.test(e.id)||seen.has(e.id)||typeof e.name!=='string'||!e.name.trim()||e.name.trim().length>90||typeof e.date!=='string'||!validDate(e.date)||!e.scores||Object.keys(e.scores).length!==5)
+   throw Error('En konkurrence har ugyldigt navn, dato eller resultat.');
+  const values=IDS.map(id=>e.scores[id]);
+  if(values.some(v=>!Number.isInteger(v)||v<1||v>5)||new Set(values).size!==5)
+   throw Error('Hver konkurrence skal fordele 1, 2, 3, 4 og 5 point én gang.');
+  seen.add(e.id);
+  return {id:e.id,name:e.name.trim(),date:e.date,scores:Object.fromEntries(IDS.map(id=>[id,e.scores[id]]))};
+ });
+ return {version:1,savedAt:Number.isFinite(d.savedAt)?d.savedAt:0,members,events};
+}
+
+const seed=validate(JSON.parse($('#seed').textContent));
+let state=clone(seed),storageOK=true,loadWarning='',editing=null,selectedSeries=null,confirmAction=null,toastTimer;
+
+try{
+ const raw=localStorage.getItem(KEY);
+ if(raw){
+  try{
+   const cached=validate(JSON.parse(raw));
+   if(cached.savedAt>=seed.savedAt)state=cached;
+  }catch(e){
+   loadWarning='Gemte data kunne ikke læses. Resultaterne fra HTML-filen vises.';
+  }
+ }
+ localStorage.setItem(KEY+'-check','1');
+ localStorage.removeItem(KEY+'-check');
+}catch(e){storageOK=false;}
+
+function toast(message){
+ clearTimeout(toastTimer);
+ $('#toast').textContent=message;
+ $('#toast').hidden=false;
+ toastTimer=setTimeout(()=>$('#toast').hidden=true,5000);
+}
+function commit(next,message){
+ state=validate({...next,savedAt:Date.now()});
+ try{
+  localStorage.setItem(KEY,JSON.stringify(state));
+  storageOK=true;loadWarning='';
+ }catch(e){storageOK=false;}
+ render();
+ toast(storageOK?message:message+' Hent en kopi for at bevare ændringen.');
+}
+function ranking(events=state.events){
+ const rows=state.members.map(m=>({
+  ...m,
+  total:events.reduce((n,e)=>n+e.scores[m.id],0),
+  wins:events.filter(e=>e.scores[m.id]===1).length
+ })).sort((a,b)=>a.total-b.total||a.name.localeCompare(b.name,'da'));
+ return rows.map(r=>({...r,rank:events.length?rows.findIndex(x=>x.total===r.total)+1:null}));
+}
+const fmtDate=s=>s?new Intl.DateTimeFormat('da-DK',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(s+'T12:00:00Z')):'Dato ikke angivet';
+const eventCount=n=>n+' '+(n===1?'konkurrence':'konkurrencer');
+
+function render(){
+ const n=state.events.length,rows=ranking(),leaders=n?rows.filter(r=>r.rank===1):[],first=leaders[0];
+ $('#round-count').textContent=n;
+ $('#points-count').textContent=n*15;
+ $('#ranking-meta').textContent=n?'Efter '+eventCount(n):'Ingen resultater endnu';
+ $('#history-tag').textContent=eventCount(n);
+ $('#leader-card').innerHTML=
+  '<div class="leader-copy"><div class="leader-label">'+icon('trophy')+
+  (leaders.length>1?'Delt førsteplads':n?'I front lige nu':'Alt er åbent')+
+  '</div><div class="leader-name '+(leaders.length>1?'tied':'')+'">'+
+  (n?leaders.map(m=>esc(m.name)).join(' · '):'Hvem tager<br>føringen?')+
+  '</div><div class="leader-detail">'+
+  (n?(n===1?'Første konkurrence er afgjort.':eventCount(n)+' er afgjort.'):'Tilføj logens første konkurrence.')+
+  '</div></div><div class="leader-number"><strong>'+(n?first.total:'–')+
+  '</strong><small>POINT</small></div>';
+
+ $('#leaderboard tbody').innerHTML=rows.map(r=>
+  '<tr data-member="'+r.id+'" class="'+(r.rank===1?'top-row':'')+'">'+
+  '<td class="rank">'+(r.rank||'–')+'</td>'+
+  '<td><div class="person"><span class="avatar" style="background:'+COLORS[r.id]+'">'+
+  esc(r.name.slice(0,2).toLocaleUpperCase('da'))+'</span><div>'+
+  '<div class="person-name">'+esc(r.name)+'</div><div class="person-note">'+
+  (!n?'Ingen resultater':r.rank===1?(leaders.length>1?'Delt føring':'Fører logen'):'+'+(r.total-first.total)+' point fra føringen')+
+  '</div></div></div></td><td class="num faded">'+r.wins+'</td>'+
+  '<td class="num faded">'+(n?(r.total/n).toLocaleString('da-DK',{minimumFractionDigits:1,maximumFractionDigits:1}):'–')+
+  '</td><td class="num score">'+r.total+'</td></tr>'
+ ).join('');
+
+ $('#history-list').innerHTML=n?
+  state.events.map((e,i)=>({e,i})).reverse().map(({e,i})=>
+   '<article class="event-card"><div class="event-header"><div class="event-no">'+
+   String(i+1).padStart(2,'0')+'</div><div class="event-title"><h3>'+esc(e.name)+
+   '</h3><p>'+fmtDate(e.date)+'</p></div><div class="event-actions">'+
+   '<button class="btn quiet icon-btn" data-edit="'+e.id+'" aria-label="Rediger '+esc(e.name)+'">'+icon('edit')+'</button>'+
+   '<button class="btn quiet icon-btn danger" data-delete="'+e.id+'" aria-label="Slet '+esc(e.name)+'">'+icon('trash')+'</button>'+
+   '</div></div><ol class="event-results">'+
+   [...state.members].sort((a,b)=>e.scores[a.id]-e.scores[b.id]).map(m=>
+    '<li><span class="place-chip">'+e.scores[m.id]+'</span><span class="result-name">'+
+    esc(m.name)+'<small>'+e.scores[m.id]+' point</small></span></li>'
+   ).join('')+'</ol></article>'
+  ).join(''):
+  '<div class="panel empty"><strong>Plads til den næste dyst</strong>Tilføj en konkurrence for at få point på tavlen.</div>';
+
+ $('#storage-status').innerHTML=storageOK&&!loadWarning?
+  '<span class="small-dot"></span>Gemmes i denne browser':'Gem en kopi af resultaterne';
+ $('#storage-detail').textContent=loadWarning||(!storageOK?
+  'Browseren tillader ikke lokal lagring. Ændringer forsvinder, når siden lukkes. Brug Hent HTML eller Eksportér data.':
+  'Ingen automatisk synkronisering mellem jer. Hent en HTML-kopi med den aktuelle stilling, eller flyt resultaterne med eksport og import.');
+ renderChart();
+}
+
+function renderChart(){
+ const n=state.events.length;
+ $('#chart-caption').textContent=n===1?
+  'Første resultat er på plads. Udviklingen vises fra næste konkurrence.':
+  'Samlet placering efter hver konkurrence. 1. plads øverst.';
+ $('#chart-legend').innerHTML=state.members.map(m=>
+  '<button data-series="'+m.id+'" class="'+(selectedSeries===m.id?'active':'')+
+  '" aria-pressed="'+(selectedSeries===m.id)+'" title="Fremhæv '+esc(m.name)+'">'+
+  '<span class="legend-dot" style="background:'+COLORS[m.id]+'"></span>'+esc(m.name)+'</button>'
+ ).join('');
+ if(!n){
+  $('#chart-container').innerHTML='<div class="empty">Grafen starter med første konkurrence.</div>';
+  return;
+ }
+ const W=520,H=203,left=25,right=20,top=15,bottom=36;
+ const x=i=>n===1?W/2:left+i*(W-left-right)/(n-1);
+ const y=r=>top+(r-1)*(H-top-bottom)/4;
+ const totals=Object.fromEntries(IDS.map(id=>[id,0]));
+ const progress=state.events.map(e=>{
+  IDS.forEach(id=>totals[id]+=e.scores[id]);
+  const vals=Object.values(totals).sort((a,b)=>a-b);
+  return Object.fromEntries(IDS.map(id=>[id,{rank:vals.indexOf(totals[id])+1,total:totals[id]}]));
+ });
+ let svg='<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Samlet placering efter hver konkurrence. Førsteplads øverst.">';
+ for(let r=1;r<=5;r++)
+  svg+='<line x1="'+left+'" y1="'+y(r)+'" x2="'+(W-right)+'" y2="'+y(r)+
+   '" stroke="#e8e1d8" stroke-dasharray="3 5"/><text x="6" y="'+(y(r)+3)+
+   '" fill="#92877a" font-size="10">'+r+'</text>';
+ for(let i=0;i<n;i++)
+  if(n<=12||i===0||i===n-1||i%Math.ceil(n/8)===0)
+   svg+='<text x="'+x(i)+'" y="'+(H-13)+'" fill="#92877a" font-size="10" text-anchor="middle">'+(i+1)+'</text>';
+ const order=[...state.members].sort((a,b)=>(a.id===selectedSeries?1:0)-(b.id===selectedSeries?1:0));
+ order.forEach(m=>{
+  const opacity=!selectedSeries||selectedSeries===m.id?1:.15;
+  svg+='<g opacity="'+opacity+'">';
+  if(n>1)
+   svg+='<path d="'+progress.map((p,i)=>(i?'L':'M')+x(i)+','+y(p[m.id].rank)).join(' ')+
+    '" fill="none" stroke="'+COLORS[m.id]+'" stroke-width="2.4" stroke-linejoin="round"/>';
+  progress.forEach((p,i)=>{
+   svg+='<circle cx="'+x(i)+'" cy="'+y(p[m.id].rank)+'" r="'+(n>30?2.5:5)+
+    '" fill="'+COLORS[m.id]+'" stroke="#fffdf9" stroke-width="2"><title>'+esc(m.name)+
+    ': '+p[m.id].rank+'. plads, '+p[m.id].total+' point efter konkurrence '+(i+1)+'</title></circle>';
+  });
+  svg+='</g>';
+ });
+ $('#chart-container').innerHTML=svg+'</svg>';
+}
+
+function openEvent(id=null){
+ editing=id;
+ const e=state.events.find(e=>e.id===id);
+ $('#event-dialog-title').textContent=e?'Ret konkurrence':'Ny konkurrence';
+ $('#event-name').value=e?e.name:'';
+ $('#event-date').value=e?e.date:'';
+ $('#event-error').hidden=true;
+ $('#place-fields').innerHTML=[1,2,3,4,5].map(p=>
+  '<div class="place-row"><label for="place-'+p+'">'+p+'. plads<small>'+p+
+  ' point</small></label><select name="place-'+p+'" id="place-'+p+'" required>'+
+  '<option value="">Vælg medlem</option>'+
+  state.members.map(m=>'<option value="'+m.id+'" '+(e&&e.scores[m.id]===p?'selected':'')+'>'+esc(m.name)+'</option>').join('')+
+  '</select></div>'
+ ).join('');
+ $('#event-dialog').showModal();
+ $('#event-name').focus();
+}
+function formError(id,message){
+ $(id).textContent=message;$(id).hidden=false;
+}
+$('#event-form').addEventListener('submit',ev=>{
+ ev.preventDefault();
+ const name=$('#event-name').value.trim(),date=$('#event-date').value;
+ const picks=[1,2,3,4,5].map(p=>$('#place-'+p).value);
+ if(!name)return formError('#event-error','Skriv et navn på konkurrencen.');
+ if(!validDate(date))return formError('#event-error','Vælg en gyldig dato, eller lad feltet stå tomt.');
+ if(picks.some(p=>!p))return formError('#event-error','Vælg et medlem til alle fem pladser.');
+ if(new Set(picks).size!==5)return formError('#event-error','Hvert medlem må kun vælges én gang. Ret de gentagne navne.');
+ if(!editing&&state.events.length>=1000)return formError('#event-error','Der er plads til 1.000 konkurrencer i én datafil.');
+ const e={
+  id:editing||'r-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7),
+  name,date,scores:Object.fromEntries(picks.map((id,i)=>[id,i+1]))
+ };
+ const next=clone(state);
+ if(editing)next.events[next.events.findIndex(x=>x.id===editing)]=e;
+ else next.events.push(e);
+ commit(next,editing?'Konkurrencen er rettet.':'Konkurrencen er tilføjet.');
+ $('#event-dialog').close();
+});
+
+function openMembers(){
+ $('#member-fields').innerHTML=state.members.map(m=>
+  '<label class="field" for="name-'+m.id+'">'+esc(m.name)+
+  '<input id="name-'+m.id+'" data-name="'+m.id+'" value="'+esc(m.name)+
+  '" maxlength="24" required autocomplete="off"></label>'
+ ).join('');
+ $('#members-error').hidden=true;
+ $('#members-dialog').showModal();
+}
+$('#members-form').addEventListener('submit',ev=>{
+ ev.preventDefault();
+ const members=state.members.map(m=>({...m,name:$('[data-name="'+m.id+'"]').value.trim()}));
+ if(members.some(m=>!m.name))return formError('#members-error','Alle fem medlemmer skal have et navn.');
+ if(new Set(members.map(m=>m.name.toLocaleLowerCase('da'))).size!==5)
+  return formError('#members-error','Brug forskellige navne til de fem medlemmer.');
+ commit({...state,members},'Medlemmerne er opdateret.');
+ $('#members-dialog').close();
+});
+
+function confirmChange(title,message,label,action){
+ $('#confirm-title').textContent=title;
+ $('#confirm-text').textContent=message;
+ $('#confirm-accept').textContent=label;
+ confirmAction=action;
+ $('#confirm-dialog').showModal();
+}
+$('#confirm-accept').addEventListener('click',()=>{
+ const action=confirmAction;confirmAction=null;
+ $('#confirm-dialog').close();
+ if(action)action();
+});
+$('#confirm-dialog').addEventListener('close',()=>{confirmAction=null;});
+
+document.addEventListener('click',ev=>{
+ const close=ev.target.closest('[data-close]');
+ if(close)$('#'+close.dataset.close).close();
+ const edit=ev.target.closest('[data-edit]');
+ if(edit)openEvent(edit.dataset.edit);
+ const del=ev.target.closest('[data-delete]');
+ if(del){
+  const e=state.events.find(e=>e.id===del.dataset.delete);
+  if(e)confirmChange(
+   'Slet konkurrence?',
+   '“'+e.name+'” fjernes, og den samlede stilling beregnes igen.',
+   'Slet konkurrence',
+   ()=>commit({...state,events:state.events.filter(x=>x.id!==e.id)},'Konkurrencen er slettet.')
+  );
+ }
+ const series=ev.target.closest('[data-series]');
+ if(series){
+  selectedSeries=selectedSeries===series.dataset.series?null:series.dataset.series;
+  renderChart();
+ }
+});
+$('#new-event').addEventListener('click',()=>openEvent());
+$('#members-button').addEventListener('click',openMembers);
+
+function download(content,name,type){
+ try{
+  const url=URL.createObjectURL(new Blob([content],{type}));
+  const a=document.createElement('a');
+  a.href=url;a.download=name;
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),15000);
+  toast('Kopien er klar til at blive hentet.');
+ }catch(e){
+  toast('Download kunne ikke startes. Åbn dashboardet i en almindelig browser.');
+ }
+}
+const today=()=>{
+ const d=new Date();
+ return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+};
+$('#export-json').addEventListener('click',()=>
+ download(JSON.stringify(state,null,2),'vinlogen_data_'+today()+'.json','application/json')
+);
+$('#download-html').addEventListener('click',()=>{
+ const copy=document.documentElement.cloneNode(true);
+ copy.querySelector('#seed').textContent=JSON.stringify({...state,savedAt:Date.now()}).replace(/</g,'\\u003c');
+ copy.querySelectorAll('dialog').forEach(d=>d.removeAttribute('open'));
+ copy.querySelector('#toast').hidden=true;
+ copy.querySelector('#toast').textContent='';
+ download('<!DOCTYPE html>\n'+copy.outerHTML,'vinlogen_'+today()+'.html','text/html;charset=utf-8');
+});
+$('#import-trigger').addEventListener('click',()=>$('#import-file').click());
+$('#import-file').addEventListener('change',async ev=>{
+ const file=ev.target.files[0];
+ ev.target.value='';
+ if(!file)return;
+ if(file.size>2*1024*1024){
+  toast('Filen er for stor. Vælg en Vinlogen-datafil under 2 MB.');
+  return;
+ }
+ try{
+  const incoming=validate(JSON.parse(await file.text()));
+  confirmChange(
+   'Importér resultater?',
+   eventCount(incoming.events.length)+' fra filen erstatter de '+state.events.length+
+   ' nuværende. Navne erstattes også. Eksportér først, hvis du vil bevare den nuværende stilling.',
+   'Importér og erstat',
+   ()=>commit(incoming,'Data er importeret.')
+  );
+ }catch(e){
+  toast('Import afvist. '+(e instanceof SyntaxError?'Filen indeholder ikke gyldige JSON-data.':e.message));
+ }
+});
+render();
+})();
+</script>
+
+</body></html>
